@@ -1,18 +1,24 @@
-# Inferlabshq Tap
+# inferlabshq/tap
 
-## How do I install these formulae?
+Homebrew formulae for [Inferlabs](https://inferlabs.com.au) projects.
 
-`brew install inferlabshq/tap/<formula>`
+## Akasha
 
-Or `brew tap inferlabshq/tap` and then `brew install <formula>`.
+A local credential vault your AI agent uses one operation at a time.
+Source, docs and threat model: https://github.com/inferlabshq/akasha
 
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "inferlabshq/tap"
-brew "<formula>"
+```bash
+brew install inferlabshq/tap/akasha
+akasha setup
 ```
 
-## Documentation
+macOS (Apple Silicon and Intel) and Linux (x86_64 and arm64). The formula
+installs the same verified release binary and signed provider bundle that
+`curl -sSL https://getakasha.dev/install | sh` does; both read their checksums
+from the release's `SHA256SUMS`.
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+`Formula/akasha.rb` is generated. It is rendered by
+[`scripts/brew-formula.sh`](https://github.com/inferlabshq/akasha/blob/main/scripts/brew-formula.sh)
+in the main repository and pushed here by the release workflow on every tag,
+so please do not send pull requests against it. Report problems with the
+formula at https://github.com/inferlabshq/akasha/issues.
