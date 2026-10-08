@@ -1,9 +1,9 @@
-# Rendered by scripts/brew-formula.sh in inferlabshq/akasha for v0.1.0-alpha.8.
+# Rendered by scripts/brew-formula.sh in inferlabshq/akasha for v0.1.0-alpha.9.
 # Do not edit by hand: the release workflow overwrites this file on every tag.
 class Akasha < Formula
   desc "Local credential vault an AI agent uses one operation at a time"
   homepage "https://getakasha.dev"
-  version "0.1.0-alpha.8"
+  version "0.1.0-alpha.9"
   license "Apache-2.0"
 
   livecheck do
@@ -13,31 +13,31 @@ class Akasha < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.8/akasha-darwin-arm64"
-      sha256 "40212df229eb23de396741ff7268dad1140eb64c278374a023f83a4abd18381a"
+      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.9/akasha-darwin-arm64"
+      sha256 "9fa365ac2a7c1a4f0082c2209e3680215769ee674e61534799b03c66e0787173"
     end
     on_intel do
-      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.8/akasha-darwin-amd64"
-      sha256 "e04af4aa17cf27ce33ec078b6f5069bec68a177658f7f594d9d7f5cff2b0851a"
+      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.9/akasha-darwin-amd64"
+      sha256 "5c63d496f9a0198576b6d2e33458581eeaf3ee47f946190e655e2ba1ea00bc6c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.8/akasha-linux-arm64"
-      sha256 "18a7f4ddb7a25ac9607b76b6a8da594164e8d690a0dde2dfb38096fa0f4ab452"
+      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.9/akasha-linux-arm64"
+      sha256 "247e4a7a5db8c386e2c68b253cb7e215a8ad78e1b2ea778c7ebcf657f3d684d0"
     end
     on_intel do
-      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.8/akasha-linux-amd64"
-      sha256 "5d446324b63e2cb1f401c757bc807990ff2f62f0c90ce28181df7576d1010127"
+      url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.9/akasha-linux-amd64"
+      sha256 "cb08d78be92365c72c46a948760120faa94652a48151b7f83c448d22cd56e80f"
     end
   end
 
   # Provider templates ship as data, not compiled in. This is the same bundle
   # (and the same checksum) install.sh verifies.
   resource "templates" do
-    url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.8/akasha-templates.tar.gz"
-    sha256 "e52895df3c74a381f22e60205b212a33a4b2dd99a8be2f72eb5dbf58649b8a2d"
+    url "https://github.com/inferlabshq/akasha/releases/download/v0.1.0-alpha.9/akasha-templates.tar.gz"
+    sha256 "f36984fa2188a4cfeca5f8e1ae1f41c69be8bdf79a388147479fe465696692de"
   end
 
   def install
@@ -125,7 +125,7 @@ class Akasha < Formula
     # brew test runs with HOME set to testpath, so this also proves the
     # launcher mirrors the bundle where the daemon reads it.
     out = shell_output("#{bin}/akasha version")
-    assert_match "akasha v0.1.0-alpha.8", out
+    assert_match "akasha v0.1.0-alpha.9", out
     assert_match "official trust root: present", out
     assert_path_exists testpath/".akasha/templates.dist/aws.yaml"
     assert_path_exists testpath/".akasha/templates.dist/aws.yaml.sig"
